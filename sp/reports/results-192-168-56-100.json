@@ -1,0 +1,189 @@
+{
+    "192.168.56.100": {
+        "osmatch": {},
+        "ports": [
+            {
+                "protocol": "tcp",
+                "portid": "21",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "ftp",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "22",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "ssh",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "23",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "telnet",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "25",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "smtp",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "80",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "http",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "110",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "pop3",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "139",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "netbios-ssn",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "443",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "https",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "445",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "microsoft-ds",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            },
+            {
+                "protocol": "tcp",
+                "portid": "3389",
+                "state": "filtered",
+                "reason": "proto-unreach",
+                "reason_ttl": "255",
+                "service": {
+                    "name": "ms-wbt-server",
+                    "method": "table",
+                    "conf": "3"
+                },
+                "cpe": [],
+                "scripts": []
+            }
+        ],
+        "hostname": [],
+        "macaddress": {
+            "addr": "08:00:27:A9:6B:28",
+            "addrtype": "mac",
+            "vendor": "PCS Systemtechnik/Oracle VirtualBox virtual NIC"
+        },
+        "state": {
+            "state": "up",
+            "reason": "arp-response",
+            "reason_ttl": "0"
+        }
+    },
+    "runtime": {
+        "time": "1722243479",
+        "timestr": "Mon Jul 29 10:57:59 2024",
+        "summary": "Nmap done at Mon Jul 29 10:57:59 2024; 1 IP address (1 host up) scanned in 0.12 seconds",
+        "elapsed": "0.12",
+        "exit": "success"
+    },
+    "stats": {
+        "scanner": "nmap",
+        "args": "\"C:/Program Files (x86)/Nmap/nmap.exe\" -v -oX - --top-ports 10 192.168.56.100",
+        "start": "1722243479",
+        "startstr": "Mon Jul 29 10:57:59 2024",
+        "version": "7.95",
+        "xmloutputversion": "1.05"
+    },
+    "task_results": [
+        {
+            "task": "ARP Ping Scan",
+            "time": "1722243479",
+            "extrainfo": "1 total hosts"
+        },
+        {
+            "task": "Parallel DNS resolution of 1 host.",
+            "time": "1722243479"
+        },
+        {
+            "task": "SYN Stealth Scan",
+            "time": "1722243479",
+            "extrainfo": "10 total ports"
+        }
+    ]
+}

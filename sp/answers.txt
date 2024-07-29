@@ -1,0 +1,26 @@
+II. SCANNER UN RÉSEAU AVEC PYTHON ET NMAP
+II. Adresse IP de la VM Debian
+2. Combien de machines sont connectées sur le réseau ?
+Il y a trois machines connectées sur le réseau 192.168.56.1/24
+192.168.56.1
+192.168.56.55
+192.168.56.100
+
+3. Quelle est l'adresse IP de la machine virtuelle Debian ?
+La machine virtuelle a l'adresse IP : 192.168.56.55
+
+4. Ouvrir l'invite de commande et ping la VM Debian et voir si tout fonctionne bien
+Sur l'invite de commande : ping 192.168.56.55 
+-- 4 paquets sur 4 envoyés et reçus
+
+III. Génération de rapports JSON
+2. Quels sont les services ouverts sur la VM Debian ?
+Les services ouverts sur la VM Debian sont :
+- Le service FTP
+- Le service SSH
+
+IV. CVE-1999-0497
+1. Exploiter la CVE : CVE-1999-0497
+Sur l'invite de commande : ftp 192.168.56.55
+Nom d'utilisateur pour accéder au service ftp est : anonymous
+--
